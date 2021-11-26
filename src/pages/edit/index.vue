@@ -1,20 +1,14 @@
 <template>
   <view class="index">
-      首页
-    <!-- <NumberDisplay/> -->
-    <!-- <NumberSubmit/> -->
+      编辑
   </view>
 </template>
 
 <script>
-// import NumberDisplay from '../../components/NumberDisplay.vue'
-// import NumberSubmit from '../../components/NumberSubmit.vue'
-
 export default {
   name: 'Index',
   components: {
-    // NumberDisplay,
-    // NumberSubmit
+
   }
 }
 </script>
