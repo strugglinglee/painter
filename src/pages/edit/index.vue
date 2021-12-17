@@ -1,25 +1,26 @@
 <template>
   <view class="index">
-      编辑
+    <Edit v-model:editInfo="editInfo"></Edit>
   </view>
 </template>
 
 <script>
+import Edit from './components/edit.vue';
+import { templates } from '../../mock/edit';
+import { reactive, toRefs } from 'vue';
 export default {
   name: 'Index',
   components: {
+    Edit,
+  },
+  setup() {
+    const state = reactive({
+        editInfo:templates[0]
+    });
 
-  }
-}
+    return {
+      ...toRefs(state),
+    };
+  },
+};
 </script>
-
-<style>
-.index {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

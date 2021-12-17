@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import edit from './edit'
 
 const state = {
   numbers: [1, 2, 3]
@@ -26,7 +27,10 @@ const store = createStore({
   state,
   mutations,
   actions,
-  getters
+  getters,
+  modules:{
+    edit
+  }
 })
 
 export default store

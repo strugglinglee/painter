@@ -1,6 +1,6 @@
 //url:https://ue.818ps.com/?picId=4999458&origin=tpl_search&pram=eyJrZXl3b3JkIjoiIiwiY2xhc3NfaWQiOm51bGwsInJvdXRlX2lkIjoiMTYzNzkyMjc1MTI3MDkiLCJyb3V0ZSI6IjEsMywiLCJhZnRlcl9yb3V0ZSI6IjEsMyIsInJlZmVyZXIiOiIlMkZzZWFyY2guaHRtbCJ9
 
-export const template=[
+export const templates=[
     {
         "tid": 4999458,
         "link_tid": 4999458,
