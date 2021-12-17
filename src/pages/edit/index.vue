@@ -11,7 +11,7 @@ import { reactive, toRefs } from 'vue';
 export default {
   name: 'Index',
   components: {
-    Edit,
+    Edit
   },
   setup() {
     const state = reactive({
