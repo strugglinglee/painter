@@ -11,11 +11,11 @@ import { reactive, toRefs } from 'vue';
 export default {
   name: 'Index',
   components: {
-    Edit
+    Edit,
   },
   setup() {
     const state = reactive({
-        editInfo:templates[0]
+      editInfo: templates[0],
     });
 
     return {

@@ -1,7 +1,7 @@
 <template>
   <input v-model="number" type="number" class="input" />
   <button @tap="addNumber">
-    Add new number
+    Add1 new numbers
   </button>
 </template>
 
