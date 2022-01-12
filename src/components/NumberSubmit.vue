@@ -1,8 +1,6 @@
 <template>
-  <input v-model="number" type="number" class="input" />
-  <button @tap="addNumber">
-    Add1 new numbers
-  </button>
+    <input v-model="number" type="number" class="input" />
+    <button @tap="addNumber">Add1 new numbers</button>
 </template>
 
 <script>
@@ -10,25 +8,25 @@ import { ref } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
-  setup () {
-    const store = useStore()
-    const number = ref(0)
+    setup() {
+        const store = useStore()
+        const number = ref(0)
 
-    function addNumber() {
-      store.dispatch('addNumber', Number(number.value))
-    }
+        function addNumber() {
+            store.dispatch('addNumber', Number(number.value))
+        }
 
-    return {
-      number,
-      addNumber
-    }
-  }
+        return {
+            number,
+            addNumber,
+        }
+    },
 }
 </script>
 
 <style>
 .input {
-  border: 1px solid lightgray;
-  margin: 10px;
+    border: 1px solid lightgray;
+    margin: 10px;
 }
 </style>
