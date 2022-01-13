@@ -1,3 +1,5 @@
+import path from 'path'
+
 const config = {
     projectName: 'painter',
     date: '2021-11-26',
@@ -13,6 +15,7 @@ const config = {
         '@/hooks': path.resolve(__dirname, '..', 'src/hooks'),
         '@/constants': path.resolve(__dirname, '..', 'src/constants'),
         '@/meta': path.resolve(__dirname, '..', 'src/meta'),
+        '@/globalData': path.resolve(__dirname, '..', 'src/globalData'),
     },
     sourceRoot: 'src',
     outputRoot: 'dist',

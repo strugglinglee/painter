@@ -28,6 +28,7 @@
         "@/hooks/*": ["./src/hooks/*"],
         "@/meta/*": ["./src/meta/*"],
         "@/constants/*": ["./src/constants/*"],
+        "@/globalData/*": ["./src/globalData/*"]
     }
   },
   "exclude": [
