@@ -12,7 +12,7 @@ export default {
     setup() {
         Taro.cloud
             .callFunction({
-                name: 'quickstartFunctions',
+                name: 'painterFunctions',
                 config: {
                     env: globalData.envId,
                 },
