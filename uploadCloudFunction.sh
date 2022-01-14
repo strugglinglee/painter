@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e cloud1-3gbvr43vf766c84d --n quickstartFunctions --r --project "/Users/strugglinglee/Desktop/painter" --report_first --report

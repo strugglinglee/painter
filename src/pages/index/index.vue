@@ -10,7 +10,6 @@ export default {
     name: 'Index',
     components: {},
     setup() {
-        console.log(globalData, 'globalData')
         Taro.cloud
             .callFunction({
                 name: 'quickstartFunctions',
@@ -18,7 +17,7 @@ export default {
                     env: globalData.envId,
                 },
                 data: {
-                    type: 'getOpenId',
+                    type: 'getList',
                 },
             })
             .then((resp) => {
