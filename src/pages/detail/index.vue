@@ -20,6 +20,7 @@ export default {
             imgUrl: '',
         })
         const { params } = Taro.getCurrentInstance().router
+        const drawImage = () => {}
 
         onMounted(async () => {
             const { result } = await cloudApi({
@@ -28,7 +29,7 @@ export default {
             })
             state.detail = result
             Taro.setNavigationBarTitle({ title: state.detail.title })
-            // drawImage()
+            drawImage()
         })
 
         return {
