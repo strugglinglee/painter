@@ -5,16 +5,17 @@
 </template>
 
 <script>
-import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { reactive, onMounted, toRefs } from 'vue'
 
 export default {
     setup() {
-        const store = useStore()
-        const getNumbers = computed(() => store.getters.getNumbers)
+        const data = reactive({
+            url: '',
+            showHead: false,
+        })
 
         return {
-            getNumbers,
+            ...toRefs(data),
         }
     },
 }
