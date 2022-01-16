@@ -8,7 +8,7 @@
                 width: canvasWidth,
                 height: canvasHeight
             }"
-        ></canvas>
+        />
         <image class="img" :src="imgUrl" mode="widthFix" />
         <button @tap="download">保存图片</button>
     </view>
@@ -16,7 +16,7 @@
 
 <script>
 import Taro from '@tarojs/taro'
-import React from 'react'
+// import React from 'react'
 import { reactive, onMounted, toRefs } from 'vue'
 import { cloudApi } from '@/utils/api'
 import { getDateInfo } from '@/utils/date'
@@ -36,7 +36,6 @@ export default {
         const drawImage = () => {
             // 定义画布对象
             const MyCanvas = Taro.createCanvasContext('MyCanvas')
-
             Taro.getImageInfo({
                 src: state.detail.url,
                 success(res) {
@@ -51,7 +50,7 @@ export default {
                     MyCanvas.fillText(dateInfo.lunarText, 210, 340) // 文本、x轴位置、y轴位置
 
                     MyCanvas.fill() // 用fill方法真正的画到canvas中
-                    MyCanvas.draw() //绘制
+                    MyCanvas.draw() // 绘制
                     setTimeout(() => {
                         Taro.canvasToTempFilePath({
                             x: 0,
@@ -70,11 +69,11 @@ export default {
 
         const download = () => {
             Taro.saveImageToPhotosAlbum({
-                filePath: state.imgUrl, //canvasToTempFilePath返回的tempFilePath
+                filePath: state.imgUrl, // canvasToTempFilePath返回的tempFilePath
                 success: res => {
                     console.log(res)
-                },
-                fail: err => {}
+                }
+                // fail: err => {}
             })
         }
 

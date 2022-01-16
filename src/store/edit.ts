@@ -1,23 +1,21 @@
-const state = {
-
-}
+const state = {}
 
 const mutations = {
-  ADD_NUMBER(state, payload) {
-    state.numbers.push(payload)
-  }
+    ADD_NUMBER(state, payload) {
+        state.numbers.push(payload)
+    }
 }
 
 const actions = {
-  addNumber(context, number) {
-    context.commit('ADD_NUMBER', number)
-  }
+    addNumber(context, number) {
+        context.commit('ADD_NUMBER', number)
+    }
 }
 
 const getters = {
-  getNumbers(state) {
-    return state.numbers
-  }
+    getNumbers(state) {
+        return state.numbers
+    }
 }
 
 export default {

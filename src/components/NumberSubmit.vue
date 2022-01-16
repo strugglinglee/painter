@@ -18,9 +18,9 @@ export default {
 
         return {
             number,
-            addNumber,
+            addNumber
         }
-    },
+    }
 }
 </script>
 

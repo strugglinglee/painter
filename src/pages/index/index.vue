@@ -17,26 +17,26 @@ export default {
     components: {},
     setup() {
         const state = reactive({
-            list: [],
+            list: []
         })
 
         onMounted(async () => {
             const {
-                result: { data },
+                result: { data }
             } = await cloudApi({ type: 'getList' })
             state.list = data
         })
 
-        const goDetail = (id) => {
+        const goDetail = id => {
             Taro.navigateTo({
-                url: `/pages/detail/index?id=${id}`,
+                url: `/pages/detail/index?id=${id}`
             })
         }
         return {
             ...toRefs(state),
-            goDetail,
+            goDetail
         }
-    },
+    }
 }
 </script>
 

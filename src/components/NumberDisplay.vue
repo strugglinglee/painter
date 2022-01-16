@@ -5,19 +5,19 @@
 </template>
 
 <script>
-import { reactive, onMounted, toRefs } from 'vue'
+import { reactive, toRefs } from 'vue'
 
 export default {
     setup() {
         const data = reactive({
             url: '',
-            showHead: false,
+            showHead: false
         })
 
         return {
-            ...toRefs(data),
+            ...toRefs(data)
         }
-    },
+    }
 }
 </script>
 
