@@ -9,8 +9,11 @@
                 height: canvasHeight
             }"
         />
-        <image class="img" :src="imgUrl" mode="widthFix" />
-        <button @tap="download">保存图片</button>
+        <view v-if="loading" class="loading"> 加载中,请耐心等待... </view>
+        <template v-else>
+            <image class="img" :src="imgUrl" mode="widthFix" />
+            <button @tap="download" class="downloadBtn">保存图片</button>
+        </template>
     </view>
 </template>
 
@@ -29,7 +32,8 @@ export default {
             detail: {},
             imgUrl: '',
             canvasWidth: '360px',
-            canvasHeight: '360px'
+            canvasHeight: '360px',
+            loading: true
         })
         const { params } = Taro.getCurrentInstance().router
 
@@ -60,9 +64,10 @@ export default {
                             canvasId: 'MyCanvas',
                             success: function (res) {
                                 state.imgUrl = res.tempFilePath
+                                state.loading = false
                             }
                         })
-                    }, 100)
+                    }, 300)
                 }
             })
         }
@@ -95,24 +100,38 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .detail {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-}
+    text-align: center;
 
-.MyCanvas {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    opacity: 0;
-}
+    .loading {
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.img {
-    margin: auto;
+    .MyCanvas {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .img {
+    }
+
+    .downloadBtn {
+        width: 400px;
+        margin-top: 20px;
+        background: #000;
+        color: #fff;
+    }
 }
 </style>

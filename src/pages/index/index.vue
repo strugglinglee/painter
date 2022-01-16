@@ -2,7 +2,7 @@
     <view class="index">
         <view v-for="item in list" :key="item.src" @tap="goDetail(item._id)">
             <image :src="item.url" mode="widthFix" />
-            <view>{{ item.title }}</view>
+            <view class="title">{{ item.title }}</view>
         </view>
     </view>
 </template>
@@ -40,7 +40,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .index {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -48,5 +48,9 @@ export default {
     text-align: center;
     color: #2c3e50;
     margin: 20px;
+
+    .title {
+        margin-bottom: 20px;
+    }
 }
 </style>
