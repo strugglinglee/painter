@@ -6,7 +6,7 @@
             class="MyCanvas"
             :style="{
                 width: canvasWidth,
-                height: canvasHeight,
+                height: canvasHeight
             }"
         ></canvas>
         <image class="img" :src="imgUrl" mode="widthFix" />
@@ -29,7 +29,7 @@ export default {
             detail: {},
             imgUrl: '',
             canvasWidth: '360px',
-            canvasHeight: '360px',
+            canvasHeight: '360px'
         })
         const { params } = Taro.getCurrentInstance().router
 
@@ -37,7 +37,7 @@ export default {
             // 定义画布对象
             const MyCanvas = Taro.createCanvasContext('MyCanvas')
 
-            wx.getImageInfo({
+            Taro.getImageInfo({
                 src: state.detail.url,
                 success(res) {
                     MyCanvas.drawImage(res.path, 0, 0, 360, 360)
@@ -61,27 +61,27 @@ export default {
                             canvasId: 'MyCanvas',
                             success: function (res) {
                                 state.imgUrl = res.tempFilePath
-                            },
+                            }
                         })
                     }, 100)
-                },
+                }
             })
         }
 
         const download = () => {
             Taro.saveImageToPhotosAlbum({
                 filePath: state.imgUrl, //canvasToTempFilePath返回的tempFilePath
-                success: (res) => {
+                success: res => {
                     console.log(res)
                 },
-                fail: (err) => {},
+                fail: err => {}
             })
         }
 
         onMounted(async () => {
             const { result } = await cloudApi({
                 type: 'getDetail',
-                id: params.id,
+                id: params.id
             })
             state.detail = result
             Taro.setNavigationBarTitle({ title: state.detail.title })
@@ -90,9 +90,9 @@ export default {
 
         return {
             ...toRefs(state),
-            download,
+            download
         }
-    },
+    }
 }
 </script>
 

@@ -1,0 +1,16 @@
+{
+    "files.eol": "\n",
+    "editor.tabSize": 4,
+
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+        // "source.fixAll.stylelint": true
+    },
+
+    // https://vuejs.github.io/vetur/guide/linting-error.html#linting
+    "vetur.validation.template": false
+    // "volar.tsPlugin": null
+}
