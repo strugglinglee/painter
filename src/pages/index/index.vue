@@ -1,9 +1,13 @@
 <template>
     <view class="index">
-        <view v-for="item in list" :key="item.src" @tap="goDetail(item._id)">
-            <image :src="item.url" mode="widthFix" />
-            <view class="title">{{ item.title }}</view>
-        </view>
+        <Item
+            v-for="item in list"
+            :key="item.src"
+            v-bind="item"
+            class="item"
+            :dateInfo="dateInfo"
+            @itemClick="goDetail(item._id)"
+        />
     </view>
 </template>
 
@@ -11,11 +15,15 @@
 import Taro from '@tarojs/taro'
 import { reactive, onMounted, toRefs } from 'vue'
 import { cloudApi } from '@/utils/api'
+import { getDateInfo } from '@/utils/date'
+import Item from './item.vue'
 
 export default {
     name: 'Index',
-    components: {},
+    components: { Item },
     setup() {
+        const dateInfo = getDateInfo()
+        console.log('dateInfo', dateInfo)
         const state = reactive({
             list: []
         })
@@ -34,7 +42,8 @@ export default {
         }
         return {
             ...toRefs(state),
-            goDetail
+            goDetail,
+            dateInfo
         }
     }
 }
@@ -47,10 +56,12 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin: 20px;
+    padding: 20px;
 
-    .title {
-        margin-bottom: 20px;
+    .item {
+        &:not(last-child) {
+            margin-bottom: 20px;
+        }
     }
 }
 </style>

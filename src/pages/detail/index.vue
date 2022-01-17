@@ -102,12 +102,11 @@ export default {
 
 <style lang="scss">
 .detail {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
     text-align: center;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
 
     .loading {
         min-height: 400px;
@@ -119,7 +118,7 @@ export default {
     .MyCanvas {
         position: fixed;
         left: 0;
-        top: 0;
+        top: -999999px;
         z-index: -1;
         opacity: 0;
     }
